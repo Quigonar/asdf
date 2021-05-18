@@ -1,0 +1,3 @@
+/home/marcos/Downloads/GeneticPuzzle-master/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/marcos/Downloads/GeneticPuzzle-master/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/marcos/Downloads/GeneticPuzzle-master/cmake-build-debug/CMakeFiles/GeneticPuzzle.dir
