@@ -4,7 +4,16 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-///Class of Piece
+/**
+ * @file Piece.h
+ * @version 1.0
+ * @title Piece
+ * @brief Manejo de la logica de las piezas del puzzle
+ */
+
+/**
+ * @brief es la clase de piezas del puzzle
+ */
 class Piece
 {
 public:
@@ -12,7 +21,13 @@ public:
     sf::Sprite piece;
     float bottom,left,right,top;
 
-    ///Constructor method of Piece class
+    /**
+     * @brief Es el constructor default de las piezas
+     * @param position es la posicion en la pantalla
+     * @param texture es el pedazo de imagen
+     * @param rect es el tamano del rectangulo
+     * @param posRect es la posicion del rectangulo
+     */
     Piece(sf::Vector2f position, sf::Texture &texture, sf::Vector2f rect, sf::Vector2f posRect)
     {
         piece.setTexture(texture);
@@ -20,7 +35,9 @@ public:
         piece.setTextureRect(sf::IntRect(posRect.y,posRect.x,rect.x,rect.y));
     }
 
-    ///Method that updates the position of the object on screen
+    /**
+     * @brief Es la funcion encargada de actualizar las piezas
+     */
     void Update()
     {
         bottom = piece.getPosition().y + piece.getTextureRect().height;

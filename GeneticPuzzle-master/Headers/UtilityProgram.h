@@ -4,15 +4,26 @@
 #include <iostream>
 #include <vector>
 
-#include "Matrix.h"
-#include "List.h"
-
+#include "MatrixGP.h"
+#include "ListGP.h"
+/**
+ * @file UtilityProgram.h
+ * @version 1.0
+ * @title Utility
+ * @brief Manejo de la logica de la particion de la imagen en una matriz y desordenarla en las piezas definidas
+ */
 using namespace std;
 
-Matrix<int>* utility(int num, Matrix<int> *matrix)
+/**
+ * @brief Es la funcion encargada de crear la matriz desordenada y con la cantidad de piezas definidas
+ * @param num es la cantida de piezas
+ * @param matrix es la matriz
+ * @return retorna la matriz desordenada
+ */
+MatrixGP<int>* utility(int num, MatrixGP<int> *matrix)
 {
-    List<int> *listInOrder = new List<int>();
-    List<int> *listNotOrder = new List<int>();
+    ListGP<int> *listInOrder = new ListGP<int>();
+    ListGP<int> *listNotOrder = new ListGP<int>();
     bool listUsed[num];
     vector <int> listDividers;
 
@@ -62,14 +73,14 @@ Matrix<int>* utility(int num, Matrix<int> *matrix)
     int higher;
     higher = num / middle;
 
-    matrix = new Matrix<int>(higher, middle);
+    matrix = new MatrixGP<int>(higher, middle);
 
 
     for(int i = 0; i < matrix->getRows(); ++i)
     {
         for(int j = 0; j < matrix->getCols(); ++j)
         {
-            MatrixNode<int>* node = matrix->getNodePos(i,j);
+            MatrixNodeGP<int>* node = matrix->getNodePos(i, j);
             node->setData(0);
         }
     }
@@ -81,7 +92,7 @@ Matrix<int>* utility(int num, Matrix<int> *matrix)
     {
         for(int i = 0; i < matrix->getRows(); i++){
             for(int j = 0; j < matrix->getCols(); j++){
-                MatrixNode<int>* node = matrix->getNodePos(i,j);
+                MatrixNodeGP<int>* node = matrix->getNodePos(i, j);
                 node->setData(listNotOrder->getDataPos(x));
                 x++;
             }
